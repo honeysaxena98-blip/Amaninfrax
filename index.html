@@ -6,222 +6,77 @@
 
 <title>Aman InfraX | Luxury Construction</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-font-family:'Montserrat',sans-serif;
-background:#0b0b0b;
-color:white;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#0a0a0a;color:#fff}
 
 /* NAVBAR */
 nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 60px;
-position:fixed;
-width:100%;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(12px);
-z-index:1000;
+position:fixed;width:100%;display:flex;justify-content:space-between;
+padding:20px 60px;background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);z-index:1000;
 }
+nav img{height:55px}
+nav ul{display:flex;gap:30px;list-style:none}
+nav ul li{cursor:pointer}
+nav ul li:hover{color:#d4af37}
 
-nav img{
-height:65px;
-}
-
-nav ul{
-display:flex;
-gap:35px;
-list-style:none;
-}
-
-nav ul li{
-cursor:pointer;
-transition:0.3s;
-}
-
-nav ul li:hover{
-color:#d4af37;
-}
-
-/* HERO */
+/* HERO VIDEO */
 .hero{
-height:100vh;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1600607686527-6fb886090705');
-background-size:cover;
-background-position:center;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
+height:100vh;position:relative;overflow:hidden;
+}
+.hero video{
+position:absolute;width:100%;height:100%;
+object-fit:cover;
+}
+.overlay{
+position:absolute;width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
 text-align:center;
 }
-
-.hero h1{
-font-size:70px;
-letter-spacing:5px;
+.overlay h1{
+font-size:70px;letter-spacing:2px;
 }
-
-.hero p{
-margin-top:15px;
-font-size:20px;
-opacity:0.8;
-}
-
+.overlay p{margin-top:10px}
 .btn{
-margin-top:30px;
-padding:14px 40px;
-background:#d4af37;
-color:black;
-border:none;
-cursor:pointer;
-transition:0.3s;
+margin-top:20px;padding:12px 40px;
+background:#d4af37;border:none;cursor:pointer;
 }
 
-.btn:hover{
-background:white;
-}
+/* SECTION */
+.section{padding:100px 60px;text-align:center}
+.section h2{margin-bottom:40px;font-size:35px}
 
-/* SECTIONS */
-.section{
-padding:100px 60px;
-text-align:center;
-}
+/* ABOUT */
+.about{max-width:800px;margin:auto;opacity:0.85}
 
-.section h2{
-font-size:45px;
-margin-bottom:20px;
-}
-
-/* CARDS */
+/* SERVICES */
 .services{
-display:flex;
-gap:30px;
-justify-content:center;
-flex-wrap:wrap;
+display:flex;gap:20px;flex-wrap:wrap;justify-content:center;
 }
-
 .card{
-background:#111;
-padding:40px;
-width:300px;
-border-radius:15px;
+background:rgba(255,255,255,0.05);
+padding:25px;width:260px;border-radius:15px;
 transition:0.4s;
 }
-
 .card:hover{
-transform:translateY(-15px);
-box-shadow:0 0 30px #d4af37;
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(212,175,55,0.4);
 }
 
 /* PROJECTS */
 .projects{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
+display:flex;flex-wrap:wrap;gap:20px;justify-content:center;
 }
-
 .project{
-width:300px;
-height:200px;
-background:url('https://images.unsplash.com/photo-1507089947368-19c1da9775ae') center/cover;
-border-radius:10px;
-transition:0.4s;
+width:300px;height:220px;border-radius:10px;overflow:hidden;
 }
+.project img{width:100%;height:100%;object-fit:cover}
+.project:hover{transform:scale(1.05);transition:0.5s}
 
-.project:hover{
-transform:scale(1.05);
-}
-
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50%;
-font-size:20px;
-}
-
-/* FOOTER */
-footer{
-padding:30px;
-text-align:center;
-background:#000;
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-<nav>
-<img src="logo.png">
-<ul>
-<li>Home</li>
-<li>Projects</li>
-<li>Services</li>
-<li>Contact</li>
-</ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-<h1>AMAN INFRAX</h1>
-<p>Luxury Construction & Premium Interiors</p>
-<button class="btn">View Projects</button>
-</section>
-
-<!-- ABOUT -->
-<section class="section">
-<h2>About Us</h2>
-<p>We deliver world-class construction, luxury interiors and modern infrastructure solutions.</p>
-</section>
-
-<!-- SERVICES -->
-<section class="section">
-<h2>Our Services</h2>
-<div class="services">
-<div class="card">Luxury Construction</div>
-<div class="card">Interior Design</div>
-<div class="card">Turnkey Projects</div>
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section class="section">
-<h2>Our Projects</h2>
-<div class="projects">
-<div class="project"></div>
-<div class="project"></div>
-<div class="project"></div>
-</div>
-</section>
-
-<!-- CONTACT -->
-<section class="section">
-<h2>Contact</h2>
-<p>📞 9399997979</p>
-<p>📍 Laxmi Plaza, MP Nagar Zone 2, Bhopal</p>
-<p>Owner: Aman Saxena</p>
-</section>
-
-<!-- WHATSAPP -->
-<a href="https://wa.me/919399997979" class="whatsapp">💬</a>
-
-<!-- FOOTER -->
-<footer>
-© Aman InfraX | All Rights Reserved
-</footer>
-
-</body>
-</html>
+/* STATS */
+.stats{display:flex;justify-content:center;gap:40px
