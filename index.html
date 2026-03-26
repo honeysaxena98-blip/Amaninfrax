@@ -3,27 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aman Infrax | Ultra Luxury</title>
+<title>Aman Infrax | Luxury Builders</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#000;color:#fff;overflow-x:hidden;}
-
-/* LOADER */
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-font-size:30px;
-color:gold;
-}
+body{background:#000;color:#fff;scroll-behavior:smooth;}
 
 /* NAV */
 nav{
@@ -32,13 +18,15 @@ width:100%;
 top:0;
 display:flex;
 justify-content:space-between;
-padding:20px 50px;
+align-items:center;
+padding:15px 60px;
 background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
-nav h1{color:gold;}
-nav a{color:#fff;margin:0 10px;text-decoration:none;}
+nav img{height:50px;}
+nav a{color:#fff;margin:0 15px;text-decoration:none;font-size:14px;}
+nav a:hover{color:gold;}
 
 /* HERO */
 .hero{
@@ -49,6 +37,7 @@ position:relative;
 width:100%;
 height:100%;
 object-fit:cover;
+filter:brightness(0.5);
 }
 .hero-content{
 position:absolute;
@@ -56,97 +45,141 @@ top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 text-align:center;
+animation:fadeUp 1.5s ease;
 }
-.hero h2{font-size:60px;color:gold;}
+.hero h1{
+font-size:65px;
+color:gold;
+}
+.hero p{
+margin-top:10px;
+font-size:18px;
+}
 .btn{
+margin-top:20px;
 padding:12px 25px;
 background:gold;
 color:#000;
-margin-top:20px;
-display:inline-block;
-border-radius:5px;
 text-decoration:none;
+border-radius:5px;
 }
 
 /* SECTION */
-section{padding:80px 50px;}
-.title{text-align:center;color:gold;margin-bottom:40px;font-size:34px;}
-
-/* GLASS CARD */
-.card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
-padding:20px;
-border-radius:15px;
-backdrop-filter:blur(10px);
-transition:0.3s;
+section{
+padding:100px 60px;
+opacity:0;
+transform:translateY(60px);
+transition:1s;
 }
-.card:hover{transform:translateY(-10px);}
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* TITLE */
+.title{
+text-align:center;
+font-size:42px;
+color:gold;
+margin-bottom:40px;
+}
+
+/* VISION */
+.vision{
+text-align:center;
+font-size:24px;
+max-width:900px;
+margin:auto;
+line-height:1.6;
+}
 
 /* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+gap:30px;
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+transition:0.4s;
+}
+.card:hover{
+transform:translateY(-10px);
 }
 
 /* PROJECT */
 .project img{
 width:100%;
-height:220px;
+height:250px;
 object-fit:cover;
 border-radius:10px;
+transition:0.4s;
+}
+.project img:hover{
+transform:scale(1.08);
 }
 
-/* CALCULATOR */
-.calc input{
+/* DIRECTOR */
+.director{
+display:flex;
+align-items:center;
+gap:50px;
+flex-wrap:wrap;
+}
+.director img{
 width:100%;
-padding:10px;
-margin:10px 0;
-border:none;
-border-radius:5px;
+max-width:400px;
+border-radius:20px;
+box-shadow:0 0 40px rgba(255,215,0,0.2);
+}
+
+/* STATS */
+.stats{
+display:flex;
+justify-content:space-around;
+text-align:center;
+flex-wrap:wrap;
+gap:20px;
+}
+.stats div{
+font-size:24px;
 }
 
 /* CONTACT */
 .contact{text-align:center;}
 
-/* STICKY BAR */
-.sticky{
-position:fixed;
-bottom:0;
-width:100%;
-display:flex;
-justify-content:space-around;
-background:#111;
-padding:10px;
-}
-.sticky a{
-color:#fff;
-text-decoration:none;
-}
-
 /* WHATSAPP */
 .whatsapp{
 position:fixed;
-bottom:70px;
+bottom:20px;
 right:20px;
 background:#25D366;
-color:#fff;
 padding:15px;
 border-radius:50%;
+color:#fff;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(50px);}
+to{opacity:1;transform:translateY(0);}
 }
 </style>
-
 </head>
-<body>
 
-<div id="loader">AMAN INFRAX</div>
+<body>
 
 <!-- NAV -->
 <nav>
-<h1>AMAN INFRAX</h1>
+<img src="logo.png">
 <div>
 <a href="#">Home</a>
+<a href="#vision">Vision</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </div>
@@ -158,26 +191,59 @@ border-radius:50%;
 <source src="https://cdn.coverr.co/videos/coverr-modern-house-5171/1080p.mp4">
 </video>
 <div class="hero-content">
-<h2>Building Luxury</h2>
-<p>Managed by Aman Saxena</p>
+<h1>Building Luxury</h1>
+<p>Creating Legacy</p>
 <a class="btn" href="#contact">Get Quote</a>
 </div>
 </div>
 
-<!-- SERVICES -->
+<!-- VISION -->
+<section id="vision">
+<h2 class="title">Our Vision</h2>
+<p class="vision">
+From a family's first home to a nation's next highway — we build what matters most.
+</p>
+</section>
+
+<!-- WHAT WE ARE -->
 <section>
-<h2 class="title">Services</h2>
+<h2 class="title">What We Are</h2>
 <div class="grid">
-<div class="card">Luxury Construction</div>
-<div class="card">Interior Design</div>
-<div class="card">Renovation</div>
-<div class="card">Turnkey Projects</div>
+<div class="card">Luxury Construction Experts</div>
+<div class="card">Modern Interior Specialists</div>
+<div class="card">Infrastructure Developers</div>
+<div class="card">Trusted Quality Builders</div>
+</div>
+</section>
+
+<!-- DIRECTOR -->
+<section>
+<div class="director">
+<div>
+<img src="your-photo.png">
+</div>
+
+<div>
+<h2 style="color:gold;font-size:36px;">Aman Saxena</h2>
+<h4>Managing Director</h4>
+
+<p style="margin-top:20px;line-height:1.6;">
+As the Managing Director of Aman Infrax, my vision is clear — 
+to redefine construction standards with quality, trust, and innovation.
+
+Every project we take is not just work for us — 
+it is a responsibility towards our clients' dreams.
+
+We are committed to delivering excellence.
+</p>
+</div>
+
 </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects">
-<h2 class="title">Projects</h2>
+<h2 class="title">Our Projects</h2>
 <div class="grid project">
 <img src="https://images.unsplash.com/photo-1600585152915-d208bec867a1">
 <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154">
@@ -188,30 +254,18 @@ border-radius:50%;
 </div>
 </section>
 
-<!-- CALCULATOR -->
+<!-- STATS -->
 <section>
-<h2 class="title">Cost Calculator</h2>
-<div class="calc">
-<input id="area" type="number" placeholder="Area (sq ft)">
-<input id="rate" type="number" placeholder="Rate per sq ft">
-<button class="btn" onclick="calc()">Calculate</button>
-<h3 id="result"></h3>
-</div>
-</section>
-
-<!-- REVIEWS -->
-<section>
-<h2 class="title">Reviews</h2>
-<div class="grid">
-<div class="card">⭐⭐⭐⭐⭐ Best builder in Bhopal</div>
-<div class="card">⭐⭐⭐⭐⭐ Luxury finish</div>
-<div class="card">⭐⭐⭐⭐⭐ On time delivery</div>
+<div class="stats">
+<div>50+ Projects</div>
+<div>10+ Years</div>
+<div>100% Satisfaction</div>
 </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="contact">
-<h2 class="title">Contact</h2>
+<h2 class="title">Contact Us</h2>
 <p>Managing Director: Aman Saxena</p>
 <p>Phone: 9399997970</p>
 <p>MP Nagar, Bhopal</p>
@@ -219,35 +273,27 @@ border-radius:50%;
 <a class="btn" href="tel:9399997970">Call Now</a>
 </section>
 
-<!-- MAP -->
-<section>
-<iframe src="https://maps.google.com/maps?q=mp%20nagar%20bhopal&t=&z=13&ie=UTF8&iwloc=&output=embed"
-width="100%" height="300"></iframe>
-</section>
-
 <!-- FOOTER -->
 <footer style="text-align:center;padding:20px;background:#111;">
-© Aman Infrax
+© Aman Infrax 2026
 </footer>
 
 <!-- WHATSAPP -->
 <a class="whatsapp" href="https://wa.me/919399997970">💬</a>
 
-<!-- STICKY -->
-<div class="sticky">
-<a href="tel:9399997970">Call</a>
-<a href="https://wa.me/919399997970">WhatsApp</a>
-<a href="#contact">Quote</a>
-</div>
-
+<!-- SCROLL ANIMATION -->
 <script>
-window.onload=()=>{document.getElementById("loader").style.display="none";}
+let sections=document.querySelectorAll("section");
 
-function calc(){
-let area=document.getElementById("area").value;
-let rate=document.getElementById("rate").value;
-document.getElementById("result").innerText="Estimated Cost: ₹"+(area*rate);
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+let top=window.scrollY;
+let offset=sec.offsetTop-400;
+if(top>offset){
+sec.classList.add("show");
 }
+});
+});
 </script>
 
 </body>
